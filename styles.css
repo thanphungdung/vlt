@@ -25,6 +25,24 @@ body {
     overflow-x: hidden;
 }
 
+/* Allow JavaScript to override background */
+body.has-background-image {
+    background: none !important;
+}
+
+/* Test background images - if this works, we know images are accessible */
+body.test-bg-1 {
+    background: url('./IMG_8318.jpg') center/cover no-repeat fixed !important;
+}
+
+body.test-bg-2 {
+    background: url('./IMG_8326.jpg') center/cover no-repeat fixed !important;
+}
+
+body.test-bg-3 {
+    background: url('./IMG_8328.jpg') center/cover no-repeat fixed !important;
+}
+
 .container {
     background: rgba(255, 255, 255, 0.9);
     padding: 2rem;

@@ -118,6 +118,11 @@ function setRandomPosition(element) {
 function showNextQuestion(questionNumber) {
     document.querySelectorAll('.question-section').forEach(q => q.classList.add('hidden'));
     document.getElementById(`question${questionNumber}`).classList.remove('hidden');
+    
+    // Change background image for the new section
+    if (typeof setBackgroundForSection === 'function') {
+        setBackgroundForSection(`question${questionNumber}`);
+    }
 }
 
 // Function to move the "No" button when clicked
@@ -178,6 +183,11 @@ function celebrate() {
     document.querySelectorAll('.question-section').forEach(q => q.classList.add('hidden'));
     const celebration = document.getElementById('celebration');
     celebration.classList.remove('hidden');
+    
+    // Change background image for celebration
+    if (typeof setBackgroundForSection === 'function') {
+        setBackgroundForSection('celebration');
+    }
     
     // Set celebration messages
     document.getElementById('celebrationTitle').textContent = config.celebration.title;
